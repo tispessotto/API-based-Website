@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Crypto Index</title>
+        <style>
+            table {
+                width: 30%;
+                 }
+            table, th, td {
+                border: 1px solid black;
+                text-align: center;
+         }
+
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Crypto Hub</h1>
+        <h3>Last updated: {{ time }}</h3>
+        <table>
+            <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Ticker</th>
+            <th>Current Price</th>
+            {% for coin in data %}
+            <tr>
+            </tr>
+            <tr>
+                <td>{{ data[coin]["rank"] }}</td>
+                <td>{{ coin }}</td>
+                <td>{{ data[coin]["symbol"].upper() }}</td>
+                <td>${{ data[coin]["price"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
